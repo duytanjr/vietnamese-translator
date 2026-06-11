@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+.env/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model checkpoints (too large for git)
+checkpoints/
+*.safetensors
+*.bin
+
+# Secrets
+configs/config.yaml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data (large files - use git-lfs or download separately)
+# data/original_data/*.parquet
+# data/synthetic_data/*.parquet

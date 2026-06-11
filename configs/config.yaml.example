@@ -1,0 +1,37 @@
+# ============================================
+# Vietnamese AI Translator - Configuration
+# ============================================
+# Copy this file to config.yaml and fill in your API key
+
+model:
+  pretrained_model_name: "Qwen/Qwen3-0.6B"
+  synthetic_model: "gemini-2.0-flash"
+
+device:
+  use_gpu: true
+
+training:
+  num_train_epochs: 3
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 4
+  optim: "adamw_torch_fused"
+  logging_steps: 10
+  save_strategy: "epoch"
+  learning_rate: 2.0e-5
+  warmup_ratio: 0
+  lr_scheduler_type: "constant"
+  report_to: "none"
+  max_length: 512
+
+data:
+  train_translation_path: "data/original_data/train_translation.parquet"
+  valid_translation_path: "data/original_data/valid_translation.parquet"
+  synthetic_translation_path: "data/synthetic_data/train_translation_synthetic.parquet"
+  processed_data_path: "data/processed_data/translation_data.parquet"
+
+synthetic:
+  num_calls: 100
+  samples_per_call: 100
+
+key:
+  gemini_api_key: "YOUR_GEMINI_API_KEY_HERE"
